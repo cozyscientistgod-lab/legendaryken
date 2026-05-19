@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "Player": {
+      "title": "Player",
+      "description": "Details for a player in the Gamer Hub.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "The UID of the player." },
+        "xp": { "type": "integer", "description": "Total experience points." },
+        "level": { "type": "integer", "description": "Current level of the player." },
+        "displayName": { "type": "string", "description": "Display name of the player." },
+        "photoURL": { "type": "string", "description": "Profile picture URL." }
+      },
+      "required": ["userId", "xp", "level"]
+    },
+    "Achievement": {
+      "title": "Achievement",
+      "description": "An unlocked achievement for a player.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "The UID of the player who unlocked it." },
+        "name": { "type": "string", "description": "Name of the achievement." },
+        "description": { "type": "string", "description": "Description of the achievement." },
+        "icon": { "type": "string", "description": "Lucide icon name or emoji." },
+        "unlockedAt": { "type": "string", "format": "date-time", "description": "When it was unlocked." }
+      },
+      "required": ["userId", "name", "description", "icon", "unlockedAt"]
+    }
+  },
+  "firestore": {
+    "/players/{userId}": {
+      "schema": "Player",
+      "description": "Player profile data."
+    },
+    "/players/{userId}/achievements/{achievementId}": {
+      "schema": "Achievement",
+      "description": "Collection of achievements unlocked by the player."
+    }
+  }
+}

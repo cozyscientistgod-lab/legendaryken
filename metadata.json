@@ -1,0 +1,6 @@
+{
+  "name": "Gamer Hub: Kenneth Jay Mapalad",
+  "description": "An infinite progression gaming dashboard with personalized levels and achievements inspired by Google Play Games.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
